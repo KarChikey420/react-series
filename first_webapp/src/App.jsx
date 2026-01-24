@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <MyApp/>
-      <h1>Hi Kartikey!</h1>
+      <p>Hi Kartikey!</p>
     </div>
   )
 }
