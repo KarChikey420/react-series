@@ -1,10 +1,11 @@
 import { useState } from 'react'
+import MyApp from './myapp'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <h1>Hey my name is Kartikey</h1>
+    <MyApp/>
   )
 }
 
