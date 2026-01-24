@@ -3,5 +3,4 @@ function MyApp(){
         <h1>How are you?</h1>
     )
 }
-
 export default MyApp

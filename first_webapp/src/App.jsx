@@ -5,7 +5,10 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <MyApp/>
+    <div>
+      <MyApp/>
+      <h1>Hi Kartikey!</h1>
+    </div>
   )
 }
 
