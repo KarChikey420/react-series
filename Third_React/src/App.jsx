@@ -9,7 +9,8 @@ function App() {
 
   return (
     <>
-    <Card1/>
+    <Card1 username='Kartikey' buttonText='Learn More'/>
+    <Card1 username='Hritik' buttonText='Learn More'/>
     </>
   )
 }

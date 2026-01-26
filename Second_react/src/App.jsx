@@ -6,12 +6,15 @@ function App() {
   
   const addValue=() => {
     // console.log("Button clicked", Math.random());
-    if (count<20){
-        count=count+1
-        setCount(count)
-    }else{
-      console.log('stop there !')
-    }
+    // if (count<20){
+    //     count=count+1
+    //     setCount(count)
+    // }else{
+    //   console.log('stop there !')
+    // }
+     count=setCount((prevCount)=>prevCount+1)
+     count=setCount((prevCount)=>prevCount+1)
+     count=setCount((prevCount)=>prevCount+1)
   }
 
   const removeValue=()=>{
