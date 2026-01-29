@@ -2,21 +2,6 @@ import { Fragment } from 'react'
 import { useState } from 'react'
 import './App.css'
 
-function App() {
-  const[title,SetTitle]=useState("my name is kartikey")
-
-  function ClickButton(){
-      SetTitle("Hey! my name is"+ " "+Math.random())
-  }
-   
-  return(
-    <Fragment>
-     <button onClick={ClickButton}>Click Me</button>
-     <Header title={title}/>
-    </Fragment>
-  )
-}
-
 function Header({title}){
   return(
     <div>
@@ -24,4 +9,28 @@ function Header({title}){
     </div>
   )
 }
+
+function App() {
+  return(
+    <div>
+    <HeaderWithButton/>
+    <Header title='kartikey'></Header>
+    <Header title='kartikey'></Header>
+    <Header title='kartikey'></Header>
+    </div>
+  )
+}
+
+function HeaderWithButton(){
+   const[title,SetTitle]=useState("my name is kartikey");
+   function UpdateTitle(){
+      SetTitle("Hey! my name is"+ " "+Math.random())
+}
+
+  return <div>
+    <button onClick={UpdateTitle}>Update the title</button>
+    <Header title={title}></Header>
+  </div>
+}
+
 export default App
