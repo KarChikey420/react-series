@@ -6,10 +6,8 @@ function App() {
 
   return (
     <>
-    <div>
       <Header title="Welcome To My Arena"/>
       <Header title="Whats Going On"/>
-    </div> 
     </>
   )
 }
