@@ -1,28 +1,27 @@
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import {BrowserRouter,Routes,Route, useNavigate} from 'react-router-dom'
 import './App.css'
 import { Dashboard } from './component/dashboard'
 import { Landing } from './component/landing'
 
+function Navigation() {
+  const navigate = useNavigate();
+  return (
+    <div>
+      <button onClick={() => navigate("/")}>Landing Page</button>
+      <button onClick={() => navigate("/dashboard")}>Dashboard</button>
+    </div>
+  );
+}
+
 function App() {
   return(
-    <div>
-      <div>
-        <button onClick={()=>{
-          window.location.href="/";
-        }}>Landing Page</button>
-
-        <button onClick={()=>{
-          window.location.href="/dashboard";
-        }}>Dashboard</button>
-      </div>
     <BrowserRouter>
-        <Routes>
-           <Route path="/dashboard" element={<Dashboard/>}/>
-           <Route path="/" element={<Landing/>}/>
-        </Routes>
+      <Navigation />
+      <Routes>
+        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/" element={<Landing/>}/>
+      </Routes>
     </BrowserRouter>
-    
-    </div>
   )
 }
 
