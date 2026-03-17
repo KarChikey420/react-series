@@ -3,7 +3,7 @@ function Apple(){
     return(
       <div>
         <Header />
-        <h1 color="blue">Buy A Sweet Apple</h1>
+        <h1 style={{color:"blue"}}>Buy A Sweet Apple</h1>
       </div>
     )
 }
