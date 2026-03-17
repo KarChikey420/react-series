@@ -1,5 +1,11 @@
+import Header from "./header";
 function Apple(){
-  return <h1>A Sweet Apple</h1>
+    return(
+      <div>
+        <Header />
+        <h1 color="blue">Buy A Sweet Apple</h1>
+      </div>
+    )
 }
 
 export default Apple;
