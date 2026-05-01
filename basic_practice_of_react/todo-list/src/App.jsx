@@ -1,32 +1,38 @@
 import { useState } from 'react'
 
-export default function App(){
-      const [task , setTask]= useState("")
-      const [todo , setTodo]= useState([])
+export default function App() {
+  const [task, setTask] = useState('')
+  const [todo, setTodo] = useState([])
 
-      const addTask = () =>{
-        if (!task.trim()) return;
-        setTodo([...todo,task])
-        setTask("")
-      }
+  const addTask = () => {
+    const trimmedTask = task.trim()
 
-      const deleteTask = (i) =>{
-        setTodo(todo.filter((_, index)=> index !==i))
-      }
+    if (!trimmedTask) return
 
-      return <div>
-        <input value={task} onChange={(e)=> setTask(e.targetvalue)}/>
-        <button onClick={addTask}>Add</button>
+    setTodo([...todo, { id: crypto.randomUUID(), text: trimmedTask }])
+    setTask('')
+  }
 
-        <ul>
-        {todo.map((t, i) => (
-          <li key={i}>
-            {t}
-            <button onClick={() => deleteTask(i)}>❌</button>
+  const deleteTask = (id) => {
+    setTodo(todo.filter((item) => item.id !== id))
+  }
+
+  return (
+    <div>
+      <input
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+      />
+      <button onClick={addTask}>Add</button>
+
+      <ul>
+        {todo.map((item) => (
+          <li key={item.id}>
+            {item.text}
+            <button onClick={() => deleteTask(item.id)}>Delete</button>
           </li>
         ))}
       </ul>
-      </div>
-
-
+    </div>
+  )
 }
