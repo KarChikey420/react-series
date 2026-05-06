@@ -21,4 +21,22 @@ export default function App(){
       setResult("Cannot divide by zero")
     }
   }
+
+  return(
+    <div>
+        <h1>Simple Calculator</h1>
+        <input type='number' value={num1} onChange={(e)=>setNum1(e.target.value)} placeholder='Number 1' />
+        <input type='number' value={num2} onChange={(e)=>setNum2(e.target.value)} placeholder='Number 2' />
+        <div>
+          <button onClick={handleAddition}>+</button>
+          <button onClick={handleSubtraction}>-</button>
+          <button onClick={handleMultiplication}>*</button>
+          <button onClick={handleDivision}>/</button>
+        </div>
+        <div>
+          <h2>Result: {result}</h2>     
+        </div>
+
+    </div>
+  )
 }
